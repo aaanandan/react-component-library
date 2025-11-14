@@ -2,11 +2,13 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 import dts from 'vite-plugin-dts';
+import { libInjectCss } from 'vite-plugin-lib-inject-css';
 
 // Config for building the library
 export default defineConfig({
   plugins: [
     react(),
+    libInjectCss(), // Automatically injects CSS when components are imported
     dts({
       include: ['lib'],
       exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
@@ -47,7 +49,7 @@ export default defineConfig({
         },
       },
     },
-    cssCodeSplit: false,
+    cssCodeSplit: true, // Enable per-component CSS splitting
     sourcemap: true,
     commonjsOptions: {
       esmExternals: true,

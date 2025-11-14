@@ -64,6 +64,15 @@ For teams using your library:
 - Theming and customization
 - Troubleshooting
 
+### 8. [**TREE_SHAKING_AND_CSS_GUIDE.md**](./TREE_SHAKING_AND_CSS_GUIDE.md) - Optimization 🌳
+Understanding tree-shaking and CSS strategies:
+- What is tree-shaking and why it matters
+- How ESM enables smaller bundles
+- Automatic CSS injection explained
+- Manual vs automatic CSS loading
+- Bundle size optimization
+- Testing and troubleshooting
+
 ## 🎯 Quick Reference
 
 ### By Role
