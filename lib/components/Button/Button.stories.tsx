@@ -646,7 +646,10 @@ export const CompleteIconGallery: Story = {
     
     // Test interactions
     await userEvent.click(saveButton);
-    await expect(saveButton).toBeInTheDocument();
+    await userEvent.click(deleteButton);
+    await expect(saveButton).toBeInTheDocument();   
+    await expect(deleteButton).toBeInTheDocument();
+
     
     // Test disabled button (should not click)
     const disabledButton = canvas.getByRole('button', { name: /delete \(disabled\)/i });
