@@ -24,8 +24,10 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     },
-    "./styles": "./dist/styles.css",
-    "./dist/styles.css": "./dist/styles.css"
+    "./styles": {
+      "types": "./lib/styles.d.ts",
+      "default": "./dist/styles.css"
+    }
   },
   "files": [
     "dist",
