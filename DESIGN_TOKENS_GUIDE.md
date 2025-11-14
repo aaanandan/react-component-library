@@ -66,7 +66,7 @@ Figma (Design) → Tokens Studio Plugin → JSON Files → Style Dictionary → 
 2. Choose "GitHub" as your sync provider
 3. Connect your GitHub account
 4. Configure:
-   - Repository: `yourcompany/react-component-library`
+   - Repository: `gsk/react-component-library`
    - Branch: `main`
    - File path: `design-tokens/tokens/`
 5. Click "Push to GitHub"
@@ -342,7 +342,7 @@ npm run build:tokens && npm run build
 Ensure the tokens CSS is imported:
 
 ```tsx
-import '@yourcompany/react-component-library/styles';
+import '@aaanandan/react-component-library/styles';
 ```
 
 ## 📚 Additional Resources

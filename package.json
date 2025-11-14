@@ -1,5 +1,5 @@
 {
-  "name": "@gsk/react-component-library",
+  "name": "@aaanandan/react-component-library",
   "version": "0.1.0",
   "description": "A reusable React component library with design tokens and TypeScript",
   "main": "./dist/index.js",

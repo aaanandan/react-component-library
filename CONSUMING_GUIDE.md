@@ -7,19 +7,19 @@ Guide for teams using this component library in their projects.
 ### NPM
 
 ```bash
-npm install @yourcompany/react-component-library
+npm install @aaanandan/react-component-library
 ```
 
 ### Yarn
 
 ```bash
-yarn add @yourcompany/react-component-library
+yarn add @aaanandan/react-component-library
 ```
 
 ### PNPM
 
 ```bash
-pnpm add @yourcompany/react-component-library
+pnpm add @aaanandan/react-component-library
 ```
 
 ## 🚀 Quick Start
@@ -32,7 +32,7 @@ You need to import the component library styles once in your application:
 
 ```tsx
 // src/main.tsx or src/index.tsx
-import '@yourcompany/react-component-library/styles';
+import '@aaanandan/react-component-library/styles';
 import App from './App';
 ```
 
@@ -40,7 +40,7 @@ import App from './App';
 
 ```tsx
 // app/layout.tsx
-import '@yourcompany/react-component-library/styles';
+import '@aaanandan/react-component-library/styles';
 
 export default function RootLayout({ children }) {
   return (
@@ -55,7 +55,7 @@ export default function RootLayout({ children }) {
 
 ```tsx
 // pages/_app.tsx
-import '@yourcompany/react-component-library/styles';
+import '@aaanandan/react-component-library/styles';
 import type { AppProps } from 'next/app';
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -66,7 +66,7 @@ export default function App({ Component, pageProps }: AppProps) {
 ### 2. Use Components
 
 ```tsx
-import { Button } from '@yourcompany/react-component-library';
+import { Button } from '@aaanandan/react-component-library';
 
 function MyComponent() {
   return (
@@ -99,7 +99,7 @@ Use tokens directly in your CSS:
 Import tokens as JavaScript/TypeScript values:
 
 ```tsx
-import { tokens } from '@yourcompany/react-component-library/tokens';
+import { tokens } from '@aaanandan/react-component-library/tokens';
 
 const MyComponent = () => (
   <div
@@ -137,7 +137,7 @@ const StyledButton = styled.button`
 // main.tsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import '@yourcompany/react-component-library/styles';
+import '@aaanandan/react-component-library/styles';
 import App from './App';
 import './index.css';
 
@@ -153,7 +153,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 ```tsx
 // app/layout.tsx
 import type { Metadata } from 'next';
-import '@yourcompany/react-component-library/styles';
+import '@aaanandan/react-component-library/styles';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -174,7 +174,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 ```tsx
 // app/root.tsx
 import { Links, LiveReload, Meta, Outlet, Scripts } from '@remix-run/react';
-import styles from '@yourcompany/react-component-library/styles';
+import styles from '@aaanandan/react-component-library/styles';
 
 export function links() {
   return [{ rel: 'stylesheet', href: styles }];
@@ -201,7 +201,7 @@ export default function App() {
 
 ```tsx
 // gatsby-browser.js
-import '@yourcompany/react-component-library/styles';
+import '@aaanandan/react-component-library/styles';
 ```
 
 ## 🎯 TypeScript Support
@@ -209,7 +209,7 @@ import '@yourcompany/react-component-library/styles';
 The library is fully typed. Import types for props:
 
 ```tsx
-import { Button, ButtonProps } from '@yourcompany/react-component-library';
+import { Button, ButtonProps } from '@aaanandan/react-component-library';
 
 // Extend button props
 interface MyButtonProps extends ButtonProps {
@@ -262,10 +262,10 @@ The library is tree-shakeable. Only import what you need:
 
 ```tsx
 // Good - only Button code is included
-import { Button } from '@yourcompany/react-component-library';
+import { Button } from '@aaanandan/react-component-library';
 
 // Avoid - imports everything
-import * as ComponentLib from '@yourcompany/react-component-library';
+import * as ComponentLib from '@aaanandan/react-component-library';
 ```
 
 ## 🔧 Build Configuration
@@ -304,10 +304,10 @@ Next.js handles CSS imports automatically. Just import the styles as shown above
 // jest.config.js
 module.exports = {
   moduleNameMapper: {
-    '@yourcompany/react-component-library/styles': 'identity-obj-proxy',
+    '@aaanandan/react-component-library/styles': 'identity-obj-proxy',
   },
   transformIgnorePatterns: [
-    'node_modules/(?!(@yourcompany/react-component-library)/)',
+    'node_modules/(?!(@aaanandan/react-component-library)/)',
   ],
 };
 ```
@@ -331,7 +331,7 @@ If your project uses Storybook, import the library styles in preview:
 
 ```tsx
 // .storybook/preview.tsx
-import '@yourcompany/react-component-library/styles';
+import '@aaanandan/react-component-library/styles';
 
 const preview = {
   // ... your config
@@ -370,7 +370,7 @@ Check the [Storybook documentation](https://your-storybook-url) for the full com
 **Solution:** Make sure you've imported the styles:
 
 ```tsx
-import '@yourcompany/react-component-library/styles';
+import '@aaanandan/react-component-library/styles';
 ```
 
 ### Issue: TypeScript errors
@@ -387,10 +387,10 @@ npm install -D typescript@^5.0.0
 
 ```tsx
 // ✅ Good
-import { Button } from '@yourcompany/react-component-library';
+import { Button } from '@aaanandan/react-component-library';
 
 // ❌ Bad
-const ComponentLib = require('@yourcompany/react-component-library');
+const ComponentLib = require('@aaanandan/react-component-library');
 ```
 
 ### Issue: CSS variable conflicts
@@ -400,14 +400,14 @@ const ComponentLib = require('@yourcompany/react-component-library');
 ## 📖 More Resources
 
 - [Component Documentation (Storybook)](https://your-storybook-url)
-- [GitHub Repository](https://github.com/yourcompany/react-component-library)
+- [GitHub Repository](https://github.com/gsk/react-component-library)
 - [Design Tokens Guide](./DESIGN_TOKENS_GUIDE.md)
-- [npm Package](https://www.npmjs.com/package/@yourcompany/react-component-library)
+- [npm Package](https://www.npmjs.com/package/@aaanandan/react-component-library)
 
 ## 💬 Support
 
 For issues or questions:
-- Open an issue on [GitHub](https://github.com/yourcompany/react-component-library/issues)
+- Open an issue on [GitHub](https://github.com/gsk/react-component-library/issues)
 - Join our [Slack channel](#)
 - Contact the design system team
 
@@ -416,11 +416,11 @@ For issues or questions:
 Check for updates regularly:
 
 ```bash
-npm outdated @yourcompany/react-component-library
+npm outdated @aaanandan/react-component-library
 ```
 
 Update to the latest version:
 
 ```bash
-npm update @yourcompany/react-component-library
+npm update @aaanandan/react-component-library
 ```

@@ -113,7 +113,7 @@ react-component-library/
 
 ```
 ┌─────────────────┐
-│  Consumer App   │  npm install @yourcompany/library
+│  Consumer App   │  npm install @aaanandan/library
 │  (Next.js/Vite) │
 └────────┬────────┘
          │

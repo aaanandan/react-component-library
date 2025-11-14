@@ -82,7 +82,7 @@ For teams using your library:
 
 **👥 For Consumers:**
 1. Read: [CONSUMING_GUIDE.md](./CONSUMING_GUIDE.md)
-2. Install: `npm install @yourcompany/your-library`
+2. Install: `npm install @aaanandan/your-library`
 3. Import: Components + styles
 4. Use: Check Storybook for examples
 

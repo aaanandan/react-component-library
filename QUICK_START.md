@@ -99,10 +99,10 @@ Follow the detailed guide in `DESIGN_TOKENS_GUIDE.md` to set up:
 1. **Update package.json:**
    ```json
    {
-     "name": "@yourcompany/your-library-name",
+     "name": "@aaanandan/your-library-name",
      "version": "0.1.0",
      "author": "Your Name",
-     "repository": "https://github.com/yourcompany/your-library"
+     "repository": "https://github.com/gsk/your-library"
    }
    ```
 
@@ -217,7 +217,7 @@ npm run type-check      # Check TypeScript
 ## ⚠️ Before You Start
 
 1. **Replace placeholders:**
-   - `@yourcompany` with your company/username
+   - `@aaanandan` with your company/username
    - Repository URLs
    - Author information
 

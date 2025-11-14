@@ -17,11 +17,11 @@ A modern, TypeScript-based React component library with design tokens and a robu
 ## 📦 Installation
 
 ```bash
-npm install @yourcompany/react-component-library
+npm install @aaanandan/react-component-library
 # or
-yarn add @yourcompany/react-component-library
+yarn add @aaanandan/react-component-library
 # or
-pnpm add @yourcompany/react-component-library
+pnpm add @aaanandan/react-component-library
 ```
 
 ## 🎯 Usage
@@ -29,8 +29,8 @@ pnpm add @yourcompany/react-component-library
 ### Basic Usage
 
 ```tsx
-import { Button } from '@yourcompany/react-component-library';
-import '@yourcompany/react-component-library/styles';
+import { Button } from '@aaanandan/react-component-library';
+import '@aaanandan/react-component-library/styles';
 
 function App() {
   return (
@@ -46,7 +46,7 @@ function App() {
 The library exports design tokens that you can use in your own components:
 
 ```tsx
-import { tokens } from '@yourcompany/react-component-library/tokens';
+import { tokens } from '@aaanandan/react-component-library/tokens';
 
 // Access token values programmatically
 const primaryColor = tokens.color.primary[600];
@@ -207,8 +207,8 @@ npm publish
 ### In a React Project
 
 ```tsx
-import { Button } from '@yourcompany/react-component-library';
-import '@yourcompany/react-component-library/styles';
+import { Button } from '@aaanandan/react-component-library';
+import '@aaanandan/react-component-library/styles';
 
 export default function App() {
   return (
@@ -225,7 +225,7 @@ export default function App() {
 In your `_app.tsx` or `layout.tsx`:
 
 ```tsx
-import '@yourcompany/react-component-library/styles';
+import '@aaanandan/react-component-library/styles';
 ```
 
 ### With Vite
@@ -233,7 +233,7 @@ import '@yourcompany/react-component-library/styles';
 Import in your main entry file:
 
 ```tsx
-import '@yourcompany/react-component-library/styles';
+import '@aaanandan/react-component-library/styles';
 ```
 
 ## 🤝 Contributing
@@ -246,10 +246,9 @@ import '@yourcompany/react-component-library/styles';
 
 ## 📄 License
 
-MIT
 
 ## 🔗 Links
 
-- [Documentation](https://your-storybook-url.com)
-- [GitHub](https://github.com/yourcompany/react-component-library)
-- [npm](https://www.npmjs.com/package/@yourcompany/react-component-library)
+- [Documentation](http://localhost:6006/?path=/docs/components-button--docs)
+- [GitHub](https://github.com/aaanandan/react-component-library)
+- [npm](https://www.npmjs.com/package/@aaanandan/react-component-library)

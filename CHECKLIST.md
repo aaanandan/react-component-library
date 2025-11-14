@@ -17,14 +17,14 @@ Use this checklist to get your component library up and running!
 ### Phase 2: Customization (10 minutes)
 
 - [ ] Update `package.json`:
-  - [ ] Change `name` from `@yourcompany/react-component-library` to your actual package name
+  - [ ] Change `name` from `@aaanandan/react-component-library` to your actual package name
   - [ ] Update `author` field
   - [ ] Update `description`
   - [ ] Update `repository` URL
   - [ ] Update `license` if needed
 
 - [ ] Update `README.md`:
-  - [ ] Replace `@yourcompany` with your org/username
+  - [ ] Replace `@aaanandan` with your org/username
   - [ ] Update repository links
   - [ ] Update documentation links
 
@@ -216,7 +216,7 @@ export type { BadgeProps } from './components/Badge';
   ```bash
   npx create-vite@latest test-app --template react-ts
   cd test-app
-  npm install @yourcompany/your-library-name
+  npm install @aaanandan/your-library-name
   ```
 - [ ] Import and use a component
 - [ ] Verify it works!
