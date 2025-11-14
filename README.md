@@ -12,7 +12,8 @@ A modern, TypeScript-based React component library with design tokens and a robu
 - 🎯 **ESLint & Prettier** for code quality
 - 🔄 **CSS Custom Properties** for theming
 - 📘 **Full TypeScript** support with type definitions
-- 🌳 **Tree-shakeable** ESM and CJS builds
+- 🌳 **Tree-shakeable** ESM and CJS builds (only bundle what you use!)
+- ✨ **Automatic CSS injection** - CSS loads automatically with components
 
 ## 📦 Installation
 
@@ -26,11 +27,10 @@ pnpm add @aaanandan/react-component-library
 
 ## 🎯 Usage
 
-### Basic Usage
+### Basic Usage (Automatic CSS Loading) ✨
 
 ```tsx
 import { Button } from '@aaanandan/react-component-library';
-import '@aaanandan/react-component-library/styles';
 
 function App() {
   return (
@@ -40,6 +40,23 @@ function App() {
   );
 }
 ```
+
+CSS is automatically loaded when you import components! No manual CSS import needed.
+
+### Alternative: Manual CSS Import
+
+If you prefer to load all styles at once:
+
+```tsx
+import '@aaanandan/react-component-library/styles';
+import { Button } from '@aaanandan/react-component-library';
+
+function App() {
+  return <Button variant="primary">Click me!</Button>;
+}
+```
+
+**See [TREE_SHAKING_AND_CSS_GUIDE.md](./TREE_SHAKING_AND_CSS_GUIDE.md) for detailed explanation of CSS loading strategies.**
 
 ### Using Design Tokens
 
