@@ -1,12 +1,11 @@
 {
   "name": "@aaanandan/react-component-library",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A reusable React component library with design tokens and TypeScript",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "type": "module",
-  
   "overrides": {
     "vite": "^6.4.1",
     "vitest": {
