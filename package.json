@@ -23,7 +23,8 @@
       "import": "./dist/tokens/index.mjs",
       "require": "./dist/tokens/index.js"
     },
-    "./styles": "./dist/styles/index.css"
+    "./styles": "./dist/styles/index.css",
+    "./dist/styles/index.css": "./dist/styles/index.css"
   },
   "files": [
     "dist"
