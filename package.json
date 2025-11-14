@@ -31,6 +31,7 @@
   },
   "files": [
     "dist",
+    "lib/styles.d.ts",
     "README.md",
     "LICENSE"
   ],

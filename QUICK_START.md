@@ -47,10 +47,13 @@ npm run storybook
 ```
 Opens at http://localhost:6006
 
-#### Option B: Vite Dev Server
+#### Option B: Vite Dev Server (Dev Playground)
 ```bash
 npm run dev
 ```
+Opens at http://localhost:5173
+
+The dev playground (`src/` folder) is a lightweight environment for quick testing and experimentation. See `src/README.md` for details.
 
 ### 4️⃣ Run Tests
 
@@ -102,7 +105,7 @@ Follow the detailed guide in `DESIGN_TOKENS_GUIDE.md` to set up:
      "name": "@aaanandan/react-component-library",
      "version": "0.1.0",
      "author": "Your Name",
-     "repository": "https://github.com/gsk/your-library"
+     "repository": "https://github.com/aaanandan/react-component-library"
    }
    ```
 

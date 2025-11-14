@@ -85,7 +85,7 @@ npm run build:tokens
 
 ### Available Scripts
 
-- `npm run dev` - Start Vite development server
+- `npm run dev` - Start Vite development server (dev playground at `src/`)
 - `npm run build` - Build the library for production
 - `npm run build:tokens` - Generate tokens from design token JSON files
 - `npm test` - Run tests with Vitest
@@ -147,13 +147,17 @@ react-component-library/
 │   │       ├── Button.test.tsx
 │   │       ├── Button.stories.tsx
 │   │       └── index.ts
-│   ├── tokens/              # Generated tokens (auto-generated)
+│   ├── tokens/              # Generated tokens (committed to repo)
 │   │   ├── tokens.css
 │   │   ├── tokens.ts
 │   │   └── tokens.json
 │   ├── hooks/               # Custom React hooks
 │   ├── utils/               # Utility functions
 │   └── index.ts             # Main entry point
+├── src/                     # Dev playground for quick testing
+│   ├── App.tsx
+│   ├── App.css
+│   └── main.tsx
 ├── .storybook/              # Storybook configuration
 ├── dist/                    # Build output (auto-generated)
 └── package.json
