@@ -1,0 +1,46 @@
+# Dependencies
+node_modules
+src
+.pnp
+.pnp.js
+
+# Testing
+coverage
+*.lcov
+.nyc_output
+
+# Production
+dist
+build
+storybook-static
+
+# Generated files
+lib/tokens/tokens.css
+lib/tokens/tokens.ts
+lib/tokens/tokens.json
+lib/tokens/types.d.ts
+
+# Misc
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+.cache
