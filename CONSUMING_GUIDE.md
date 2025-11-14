@@ -400,14 +400,14 @@ const ComponentLib = require('@aaanandan/react-component-library');
 ## 📖 More Resources
 
 - [Component Documentation (Storybook)](https://your-storybook-url)
-- [GitHub Repository](https://github.com/gsk/react-component-library)
+- [GitHub Repository](https://github.com/aaanandan/react-component-library)
 - [Design Tokens Guide](./DESIGN_TOKENS_GUIDE.md)
 - [npm Package](https://www.npmjs.com/package/@aaanandan/react-component-library)
 
 ## 💬 Support
 
 For issues or questions:
-- Open an issue on [GitHub](https://github.com/gsk/react-component-library/issues)
+- Open an issue on [GitHub](https://github.com/aaanandan/react-component-library/issues)
 - Join our [Slack channel](#)
 - Contact the design system team
 

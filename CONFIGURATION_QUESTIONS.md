@@ -2,13 +2,17 @@
 
 This document lists configuration items that need clarification or potential issues found during the review.
 
+**Status:** ✅ All issues have been resolved! See resolutions below.
+
 ---
 
-## Critical Issues
+## Critical Issues (✅ RESOLVED)
 
-### 1. `.gitattributes` File Content
+### 1. `.gitattributes` File Content ✅
 
 **Issue:** The `.gitattributes` file contains documentation/instructions instead of actual gitattributes configuration.
+
+**Resolution:** ✅ FIXED - Cleaned up the file to contain only proper gitattributes configuration.
 
 **Current Content:**
 ```
@@ -56,9 +60,9 @@ New-Item -ItemType File -Path .gitattributes
 
 ---
 
-## Configuration Clarifications Needed
+## Configuration Clarifications (✅ RESOLVED)
 
-### 2. Dev Playground (`src` folder)
+### 2. Dev Playground (`src` folder) ✅
 
 **Current State:**
 - `index.html` references `/src/main.tsx`
@@ -75,11 +79,15 @@ New-Item -ItemType File -Path .gitattributes
 - Running `npm run dev` will fail because `/src/main.tsx` doesn't exist
 - Users might be confused about the purpose of the dev server vs Storybook
 
-**Recommendation:** Either:
-- **Option A:** Document the dev playground feature and provide a template `src/main.tsx` (gitignored)
-- **Option B:** Remove `index.html` references and clarify that Storybook is the primary development environment
+**Resolution:** ✅ IMPLEMENTED - Created dev playground template with:
+- `src/main.tsx` - Entry point
+- `src/App.tsx` - Example component with Button demos
+- `src/App.css` - Styled examples using design tokens
+- `src/README.md` - Documentation for dev playground
+- Updated README.md and QUICK_START.md to document the feature
+- Removed `src` from `.gitignore` so template is committed
 
-### 3. Generated Tokens in Git
+### 3. Generated Tokens in Git ✅
 
 **Current State:**
 - Generated token files (`lib/tokens/*.ts`, `lib/tokens/*.css`, etc.) are in `.gitignore`
@@ -103,11 +111,14 @@ New-Item -ItemType File -Path .gitattributes
   - ❌ Potential merge conflicts
   - ❌ Larger repo size
 
-**Current Impact:**
-- New developers must run `npm run build:tokens` before `npm run storybook` or tests will fail
-- This is documented in QUICK_START.md but could be a friction point
+**Resolution:** ✅ IMPLEMENTED - Generated tokens are now committed to the repository:
+- Removed token files from `.gitignore`
+- Generated tokens with `npm run build:tokens`
+- Tokens are now committed and will be in the repo
+- Developers can start immediately without generating tokens first
+- Note updated in PROJECT_CONFIGURATION.md
 
-### 4. Package Files Field
+### 4. Package Files Field ✅
 
 **Current Configuration:**
 ```json
@@ -130,14 +141,14 @@ import '@aaanandan/react-component-library/styles';
 // TypeScript might not find lib/styles.d.ts
 ```
 
-**Recommendation:** Add `lib/styles.d.ts` to files array:
+**Resolution:** ✅ FIXED - Added `lib/styles.d.ts` to package.json files array:
 ```json
 {
   "files": ["dist", "lib/styles.d.ts", "README.md", "LICENSE"]
 }
 ```
 
-### 5. Vite Build - Asset File Naming
+### 5. Vite Build - Asset File Naming ✅
 
 **Current Code (vite.config.build.ts:40-46):**
 ```typescript
@@ -164,13 +175,13 @@ assetFileNames: (assetInfo) => {
 }
 ```
 
-**Question:** Does this build successfully? Should we fix the property access?
+**Resolution:** ✅ NO CHANGE NEEDED - User confirmed that `assetInfo.name` is deprecated, so using `assetInfo.names` is correct. The current code is working as intended.
 
 ---
 
-## Documentation Alignment Issues
+## Documentation Alignment Issues (✅ RESOLVED)
 
-### 6. Repository URLs
+### 6. Repository URLs ✅
 
 **Multiple Documentation Files Reference:**
 - `https://github.com/gsk/react-component-library` (in some docs)
@@ -181,55 +192,52 @@ assetFileNames: (assetInfo) => {
 - CONSUMING_GUIDE.md (lines 403, 410)
 - DESIGN_TOKENS_GUIDE.md (line 69)
 
-**Question:** Which is the correct repository URL?
+**Resolution:** ✅ FIXED - Updated all documentation to use `aaanandan`:
+- Fixed CONSUMING_GUIDE.md (2 instances)
+- Fixed QUICK_START.md (1 instance)
+- Fixed DESIGN_TOKENS_GUIDE.md (1 instance)
+- All docs now consistently reference `github.com/aaanandan/react-component-library`
 
-**Recommendation:** Ensure all documentation uses the URL from package.json for consistency.
-
-### 7. Package Scope Inconsistency
+### 7. Package Scope Inconsistency ✅
 
 **Files use different org names:**
 - `@aaanandan` (package.json)
 - `@gsk` (some documentation)
 - `@your-company` (some examples)
 
-**Question:** Should we:
-1. Use a placeholder like `@your-org` consistently in docs?
-2. Or keep `@aaanandan` as the example throughout?
+**Resolution:** ✅ FIXED - All documentation now consistently uses `@aaanandan` as the package scope.
 
-### 8. Storybook Documentation URL
+### 8. Storybook Documentation URL ✅
 
 **Multiple docs reference:**
 - `http://localhost:6006/?path=/docs/components-button--docs` (README.md:252)
 - `https://your-storybook-url` (multiple docs)
 
-**Question:** Should we:
-1. Use localhost URLs for local development references?
-2. Add a placeholder for deployed Storybook URL?
-3. Document both local and production Storybook URLs?
+**Resolution:** ✅ NO CHANGES - Placeholder URLs left as-is. Users will replace with their actual Storybook deployment URL when ready.
 
 ---
 
-## Optional Enhancements
+## Optional Enhancements (✅ RESOLVED)
 
-### 9. Missing LICENSE File
+### 9. Missing LICENSE File ✅
 
 **Observation:**
 - `package.json` has `"license": "MIT"`
 - `files` field includes `"LICENSE"`
 - But no LICENSE file exists in the repository
 
-**Question:** Should we add a LICENSE file?
+**Resolution:** ✅ ADDED - Created MIT LICENSE file with copyright for Anandan B (2025).
 
-### 10. Missing CHANGELOG.md
+### 10. Missing CHANGELOG.md ✅
 
 **Observation:**
 - Project is at version 0.1.4
 - No CHANGELOG.md exists
 - Multiple docs mention maintaining a changelog
 
-**Question:** Should we create a CHANGELOG.md template?
+**Resolution:** ✅ DEFERRED - Can be added later when creating first release. Not critical for initial setup.
 
-### 11. TypeScript Config - Included Files
+### 11. TypeScript Config - Included Files ✅
 
 **Current:**
 ```json
@@ -238,9 +246,9 @@ assetFileNames: (assetInfo) => {
 }
 ```
 
-**Question:** Should `src` be removed from include since it's gitignored and optional?
+**Resolution:** ✅ KEPT AS-IS - `src` is now part of the repository (dev playground template), so it should remain in the include list.
 
-### 12. ESLint Script Flags
+### 12. ESLint Script Flags ✅
 
 **Current Script:**
 ```bash
@@ -249,47 +257,44 @@ assetFileNames: (assetInfo) => {
 
 **Note:** The `--ext` flag is deprecated in ESLint 9 flat config (it now uses `files` patterns in config).
 
-**Question:** Should we update the lint script to:
-```bash
-"lint": "eslint . --report-unused-disable-directives --max-warnings 0"
-```
+**Resolution:** ✅ NO CHANGE - The `--ext` flag still works in ESLint 9, just not required. Keeping for explicit clarity about which file types to lint.
 
 ---
 
-## Unused/Empty Directories
+## Unused/Empty Directories (✅ RESOLVED)
 
-### 13. Empty Folders
+### 13. Empty Folders ✅
 
 **Current State:**
 - `lib/hooks/` - Mentioned in path aliases but empty
 - `lib/utils/` - Mentioned in path aliases but empty
 
-**Question:** Should we:
-1. Add placeholder `index.ts` files with JSDoc explaining their purpose?
-2. Remove path aliases until actually needed?
-3. Keep as-is for future expansion?
+**Resolution:** ✅ KEPT AS-IS - Empty folders (`lib/hooks/`, `lib/utils/`) left as placeholders for future expansion. Path aliases configured and ready to use when needed.
 
 ---
 
-## Summary of Recommendations
+## Summary of All Changes Made
 
-**High Priority:**
-1. ✅ Fix `.gitattributes` file format
-2. ✅ Clarify dev playground (`src` folder) setup
-3. ✅ Add `lib/styles.d.ts` to package files
-4. ✅ Fix asset file naming in vite.config.build.ts
-5. ✅ Unify repository URLs across all docs
+### ✅ Implemented
 
-**Medium Priority:**
-6. Add LICENSE file
-7. Create CHANGELOG.md template
-8. Update ESLint script to remove `--ext` flag
-9. Clarify generated tokens strategy (gitignored vs committed)
+1. ✅ Fixed `.gitattributes` file format
+2. ✅ Created dev playground template (`src/` folder with App.tsx, main.tsx, README.md)
+3. ✅ Removed `src` from `.gitignore`
+4. ✅ Generated design tokens and removed from `.gitignore` (now committed)
+5. ✅ Added `lib/styles.d.ts` to package.json files array
+6. ✅ Created MIT LICENSE file
+7. ✅ Updated all documentation to use `aaanandan` repository URL consistently
+8. ✅ Documented dev playground feature in README.md and QUICK_START.md
+9. ✅ Updated PROJECT_CONFIGURATION.md notes
 
-**Low Priority:**
-10. Add placeholder files to empty directories
-11. Remove `src` from tsconfig include
-12. Standardize organization name in examples
+### ⚠️ No Changes (By Design)
+- Vite asset file naming (assetInfo.names is correct, assetInfo.name is deprecated)
+- ESLint `--ext` flag (still works, kept for clarity)
+- Empty folders (kept as placeholders)
+- Storybook URLs (left as placeholders for users to replace)
+
+### 📝 Deferred
+- CHANGELOG.md (can be added when creating first release)
 
 ---
 

@@ -1,6 +1,5 @@
 # Dependencies
 node_modules
-src
 .pnp
 .pnp.js
 
@@ -13,12 +12,6 @@ coverage
 dist
 build
 storybook-static
-
-# Generated files
-lib/tokens/tokens.css
-lib/tokens/tokens.ts
-lib/tokens/tokens.json
-lib/tokens/types.d.ts
 
 # Misc
 .DS_Store
