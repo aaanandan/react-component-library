@@ -99,7 +99,7 @@ Follow the detailed guide in `DESIGN_TOKENS_GUIDE.md` to set up:
 1. **Update package.json:**
    ```json
    {
-     "name": "@aaanandan/your-library-name",
+     "name": "@aaanandan/react-component-library",
      "version": "0.1.0",
      "author": "Your Name",
      "repository": "https://github.com/gsk/your-library"

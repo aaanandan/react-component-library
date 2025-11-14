@@ -189,7 +189,7 @@ The **Button component** (`lib/components/Button/`) is a complete example showin
 Edit `package.json`:
 ```json
 {
-  "name": "@aaanandan/your-library-name"
+  "name": "@aaanandan/react-component-library"
 }
 ```
 

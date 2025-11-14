@@ -216,7 +216,7 @@ export type { BadgeProps } from './components/Badge';
   ```bash
   npx create-vite@latest test-app --template react-ts
   cd test-app
-  npm install @aaanandan/your-library-name
+  npm install @aaanandan/react-component-library
   ```
 - [ ] Import and use a component
 - [ ] Verify it works!
