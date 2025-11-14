@@ -1,6 +1,6 @@
 {
   "name": "@aaanandan/react-component-library",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A reusable React component library with design tokens and TypeScript",
   "type": "module",
   "main": "./dist/index.js",
