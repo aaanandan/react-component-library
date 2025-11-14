@@ -6,6 +6,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "type": "module",
+  
   "overrides": {
     "vite": "^6.4.1",
     "vitest": {
