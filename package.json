@@ -2,32 +2,35 @@
   "name": "@aaanandan/react-component-library",
   "version": "0.1.2",
   "description": "A reusable React component library with design tokens and TypeScript",
+  "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "type": "module",
   "overrides": {
     "vite": "^6.4.1",
     "vitest": {
       "vite": "^6.4.1"
     }
   },
-  "exports": {
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+ "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     },
-    "./tokens": {
-      "types": "./dist/tokens/index.d.ts",
-      "import": "./dist/tokens/index.mjs",
-      "require": "./dist/tokens/index.js"
-    },
-    "./styles": "./dist/styles/index.css",
-    "./dist/styles/index.css": "./dist/styles/index.css"
+    "./styles": "./dist/styles.css",
+    "./dist/styles.css": "./dist/styles.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "dev": "vite",

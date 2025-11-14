@@ -2,13 +2,11 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 import dts from 'vite-plugin-dts';
-import { libInjectCss } from 'vite-plugin-lib-inject-css';
 
 // Config for building the library
 export default defineConfig({
   plugins: [
     react(),
-    libInjectCss(),
     dts({
       include: ['lib'],
       exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
@@ -41,12 +39,15 @@ export default defineConfig({
         },
         assetFileNames: (assetInfo) => {
           const name = assetInfo.names && assetInfo.names[0];
-          if (name === 'style.css') return 'styles/index.css';
+            // Rename CSS to styles.css for cleaner import
+          if (name && name.endsWith('.css')) {
+            return 'styles.css';
+          }
           return name || 'assets/[name][extname]';
         },
       },
     },
-    cssCodeSplit: true,
+    cssCodeSplit: false,
     sourcemap: true,
     commonjsOptions: {
       esmExternals: true,
