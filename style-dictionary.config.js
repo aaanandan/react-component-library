@@ -1,12 +1,39 @@
-const StyleDictionary = require('style-dictionary');
+module.exports = {
+  source: ['design-tokens/tokens/**/*.json'],
+  platforms: {
+    android: {
+      transformGroup: 'android',
+      buildPath: 'design-tokens/src/main/java/com/aaanandan/designtokens/generated/',
+      files: [
+        {
+          destination: 'ColorTokens.kt',
+          format: 'compose/colors',
+          filter: (token) => token.type === 'color'
+        },
+        {
+          destination: 'SpacingTokens.kt',
+          format: 'compose/spacing',
+          filter: (token) => token.type === 'spacing'
+        },
+        {
+          destination: 'TypographyTokens.kt',
+          format: 'compose/typography',
+          filter: (token) => token.type === 'fontSize'
+        },
+        {
+          destination: 'BorderRadiusTokens.kt',
+          format: 'compose/borderRadius',
+          filter: (token) => token.type === 'borderRadius'
+        }
+      ]
+    }
+  },
+  hooks: {
+    formats: {
+      'compose/colors': function({ dictionary }) {
+        const colors = dictionary.allTokens.filter(token => token.type === 'color');
 
-// Custom format for Android Compose
-StyleDictionary.registerFormat({
-  name: 'compose/colors',
-  formatter: function({ dictionary, options }) {
-    const colors = dictionary.allTokens.filter(token => token.type === 'color');
-
-    let output = `package com.aaanandan.designtokens.generated
+        let output = `package com.aaanandan.designtokens.generated
 
 import androidx.compose.ui.graphics.Color
 
@@ -17,29 +44,25 @@ import androidx.compose.ui.graphics.Color
 object ColorTokens {
 `;
 
-    colors.forEach(token => {
-      const name = token.name
-        .split('-')
-        .map((word, index) =>
-          index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
-        )
-        .join('');
-      const hexValue = token.value.toUpperCase();
+        colors.forEach(token => {
+          const name = token.name
+            .split('-')
+            .map((word, index) =>
+              index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+            )
+            .join('');
+          const hexValue = token.value.toUpperCase();
 
-      output += `    val ${name} = Color(0xFF${hexValue.replace('#', '')})\n`;
-    });
+          output += `    val ${name} = Color(0xFF${hexValue.replace('#', '')})\n`;
+        });
 
-    output += `}\n`;
-    return output;
-  }
-});
+        output += `}\n`;
+        return output;
+      },
+      'compose/spacing': function({ dictionary }) {
+        const spacing = dictionary.allTokens.filter(token => token.type === 'spacing');
 
-StyleDictionary.registerFormat({
-  name: 'compose/spacing',
-  formatter: function({ dictionary, options }) {
-    const spacing = dictionary.allTokens.filter(token => token.type === 'spacing');
-
-    let output = `package com.aaanandan.designtokens.generated
+        let output = `package com.aaanandan.designtokens.generated
 
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -51,28 +74,24 @@ import androidx.compose.ui.unit.dp
 object SpacingTokens {
 `;
 
-    spacing.forEach(token => {
-      const name = token.name
-        .split('-')
-        .map((word, index) =>
-          index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
-        )
-        .join('');
+        spacing.forEach(token => {
+          const name = token.name
+            .split('-')
+            .map((word, index) =>
+              index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+            )
+            .join('');
 
-      output += `    val ${name}: Dp = ${token.value}.dp\n`;
-    });
+          output += `    val ${name}: Dp = ${token.value}.dp\n`;
+        });
 
-    output += `}\n`;
-    return output;
-  }
-});
+        output += `}\n`;
+        return output;
+      },
+      'compose/typography': function({ dictionary }) {
+        const typography = dictionary.allTokens.filter(token => token.type === 'fontSize');
 
-StyleDictionary.registerFormat({
-  name: 'compose/typography',
-  formatter: function({ dictionary, options }) {
-    const typography = dictionary.allTokens.filter(token => token.type === 'fontSize');
-
-    let output = `package com.aaanandan.designtokens.generated
+        let output = `package com.aaanandan.designtokens.generated
 
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
@@ -84,28 +103,24 @@ import androidx.compose.ui.unit.sp
 object TypographyTokens {
 `;
 
-    typography.forEach(token => {
-      const name = token.name
-        .split('-')
-        .map((word, index) =>
-          index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
-        )
-        .join('');
+        typography.forEach(token => {
+          const name = token.name
+            .split('-')
+            .map((word, index) =>
+              index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+            )
+            .join('');
 
-      output += `    val ${name}: TextUnit = ${token.value}.sp\n`;
-    });
+          output += `    val ${name}: TextUnit = ${token.value}.sp\n`;
+        });
 
-    output += `}\n`;
-    return output;
-  }
-});
+        output += `}\n`;
+        return output;
+      },
+      'compose/borderRadius': function({ dictionary }) {
+        const borderRadius = dictionary.allTokens.filter(token => token.type === 'borderRadius');
 
-StyleDictionary.registerFormat({
-  name: 'compose/borderRadius',
-  formatter: function({ dictionary, options }) {
-    const borderRadius = dictionary.allTokens.filter(token => token.type === 'borderRadius');
-
-    let output = `package com.aaanandan.designtokens.generated
+        let output = `package com.aaanandan.designtokens.generated
 
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -117,58 +132,20 @@ import androidx.compose.ui.unit.dp
 object BorderRadiusTokens {
 `;
 
-    borderRadius.forEach(token => {
-      const name = token.name
-        .split('-')
-        .map((word, index) =>
-          index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
-        )
-        .join('');
+        borderRadius.forEach(token => {
+          const name = token.name
+            .split('-')
+            .map((word, index) =>
+              index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+            )
+            .join('');
 
-      output += `    val ${name}: Dp = ${token.value}.dp\n`;
-    });
+          output += `    val ${name}: Dp = ${token.value}.dp\n`;
+        });
 
-    output += `}\n`;
-    return output;
-  }
-});
-
-module.exports = {
-  source: ['design-tokens/tokens/**/*.json'],
-  platforms: {
-    android: {
-      transformGroup: 'android',
-      buildPath: 'design-tokens/src/main/java/com/aaanandan/designtokens/generated/',
-      files: [
-        {
-          destination: 'ColorTokens.kt',
-          format: 'compose/colors',
-          filter: {
-            type: 'color'
-          }
-        },
-        {
-          destination: 'SpacingTokens.kt',
-          format: 'compose/spacing',
-          filter: {
-            type: 'spacing'
-          }
-        },
-        {
-          destination: 'TypographyTokens.kt',
-          format: 'compose/typography',
-          filter: {
-            type: 'fontSize'
-          }
-        },
-        {
-          destination: 'BorderRadiusTokens.kt',
-          format: 'compose/borderRadius',
-          filter: {
-            type: 'borderRadius'
-          }
-        }
-      ]
+        output += `}\n`;
+        return output;
+      }
     }
   }
 };
